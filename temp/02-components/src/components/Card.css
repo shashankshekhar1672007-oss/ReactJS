@@ -1,0 +1,40 @@
+.id-card {
+  width: 300px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px auto;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.id-card-header {
+  background-color: #1a5276;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.id-card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.id-card-body {
+  padding: 20px;
+}
+
+.id-card-body h3 {
+  margin: 0 0 15px 0;
+  color: #333333;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.id-card-body p {
+  margin: 8px 0;
+  color: #555555;
+  font-size: 1rem;
+}
