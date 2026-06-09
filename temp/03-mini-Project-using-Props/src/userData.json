@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Noah Thompson",
+    "tagline": "Product Designer who focuses on simplicity & usability.",
+    "likes": "72.9K",
+    "posts": "828",
+    "views": "342.9K",
+    "experience": 18
+  },
+  {
+    "id": 2,
+    "name": "Sophia Martinez",
+    "tagline": "Front-end developer passionate about accessible web experiences.",
+    "likes": "55.1K",
+    "posts": "612",
+    "views": "210.5K",
+    "experience": 11
+  },
+  {
+    "id": 3,
+    "name": "Liam Johnson",
+    "tagline": "Data Scientist exploring new insights from complex datasets.",
+    "likes": "91.3K",
+    "posts": "987",
+    "views": "450.8K",
+    "experience": 6
+  },
+  {
+    "id": 4,
+    "name": "Olivia White",
+    "tagline": "AI Researcher focusing on ethical machine learning.",
+    "likes": "88.0K",
+    "posts": "750",
+    "views": "390.2K",
+    "experience": 16
+  }
+]

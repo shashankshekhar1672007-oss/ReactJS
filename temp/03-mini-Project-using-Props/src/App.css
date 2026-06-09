@@ -1,0 +1,22 @@
+/* General body styling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f0f2f5; /* A slightly different, softer background */
+  color: #333;
+  margin: 0;
+  padding: 32px; /* Add some padding to the body to frame the content */
+}
+
+/* Grid container for the cards */
+.card-container {
+  display: grid;
+  /* Create responsive columns:
+     - auto-fit: fill the row with as many columns as can fit.
+     - minmax(320px, 1fr): each column will be at least 320px wide (the card's width),
+       and will expand to share the available space equally.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px; /* Space between cards, both horizontally and vertically */
+  max-width: 1400px; /* Optional: constrain the max width of the grid */
+  margin: 0 auto; /* Center the grid container within the body padding */
+}
