@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center h-[60px] bg-green-400 px-8 sticky top-0 z-50 shadow-md">
+    <nav className="flex justify-between items-center h-15 bg-green-400 px-8 sticky top-0 z-50 shadow-md">
       <div className="font-extrabold text-2xl tracking-wide cursor-pointer hover:scale-105 transition-transform">
         LOGO
       </div>
