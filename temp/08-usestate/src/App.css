@@ -1,0 +1,64 @@
+.app-container {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 2px solid #bdc3c7;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+}
+
+.heading {
+  color: #2c3e50;
+  font-size: 250px;
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.info-section {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.info-section h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-increase {
+  background-color: #27ae60;
+}
+
+.btn-increase:hover {
+  background-color: #2ecc71;
+}
+
+.btn-decrease {
+  background-color: #e74c3c;
+}
+
+.btn-decrease:hover {
+  background-color: #ff5e4d;
+}
