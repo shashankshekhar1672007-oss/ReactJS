@@ -1,0 +1,403 @@
+/* ─── Reset ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Tokens ─────────────────────────────────────────── */
+:root {
+  /* DARK THEME (commented out — swap back when needed)
+  --bg:            #0c0c0d;
+  --bg-surface:    #141415;
+  --bg-raised:     #1c1c1e;
+  --bg-input:      #111112;
+
+  --text-primary:  #f0efe9;
+  --text-secondary:#888884;
+  --text-muted:    #48484a;
+
+  --border:        rgba(255, 255, 255, 0.07);
+  --border-hover:  rgba(255, 255, 255, 0.13);
+  */
+
+  /* LIGHT THEME */
+  --bg:            #f5f4f0;
+  --bg-surface:    #ffffff;
+  --bg-raised:     #fafaf8;
+  --bg-input:      #f9f8f6;
+
+  --text-primary:  #1a1a1a;
+  --text-secondary:#6b6b6b;
+  --text-muted:    #a0a0a0;
+
+  --border:        rgba(0, 0, 0, 0.08);
+  --border-hover:  rgba(0, 0, 0, 0.16);
+
+  /* Accents — same in both themes */
+  --accent-teal:   #0ea98a;
+  --accent-purple: #7c6cf0;
+  --accent-amber:  #e09417;
+  --accent-coral:  #e85555;
+  --accent-blue:   #3b82f6; 
+  --accent-pink:   #e85db4; 
+  --accent-lime:   #8cb83a; 
+  --accent-yellow: #eebf31; 
+  --accent-cyan:   #16b0d9; 
+  --accent-peach:  #f28b66; 
+
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ─── Base ───────────────────────────────────────────── */
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── App Shell ──────────────────────────────────────── */
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ─── Header ─────────────────────────────────────────── */
+.app-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.app-logo {
+  font-size: 1.1rem;
+  color: var(--accent-teal);
+  line-height: 1;
+}
+
+.main-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.main-subheading {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: auto;
+  font-family: var(--font-mono);
+}
+
+/* ─── Body Layout ────────────────────────────────────── */
+.app-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ─── Shared Section Label ───────────────────────────── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ─── Note Editor (Left) ─────────────────────────────── */
+.note-take {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.note-take-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-label {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.note-heading-input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.note-heading-input:focus {
+  border-color: var(--accent-teal);
+}
+
+.note-heading-input::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.note-content-input {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  outline: none;
+  resize: vertical;
+  min-height: 220px;
+  transition: border-color 0.2s;
+}
+
+.note-content-input:focus {
+  border-color: var(--accent-teal);
+}
+
+.note-content-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.char-hint {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.submit-note-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  /* DARK THEME button: background: var(--text-primary); color: var(--bg); */
+  background: var(--text-primary);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: opacity 0.15s, transform 0.12s;
+}
+
+.submit-note-btn:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+.submit-note-btn:active {
+  transform: translateY(0);
+}
+
+.btn-arrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ─── Notes Sidebar (Right) ──────────────────────────── */
+.note-view {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.note-count {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 2px;
+}
+
+/* Subtle scrollbar */
+.notes-list::-webkit-scrollbar {
+  width: 3px;
+}
+.notes-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.notes-list::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 99px;
+}
+
+/* ─── Note Card ──────────────────────────────────────── */
+.note-card {
+  display: flex;
+  flex-shrink: 0;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.note-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* The colored accent bar — inspired by the reference image */
+.note-card-accent {
+  width: 4px;
+  flex-shrink: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+.note-card-body {
+  padding: 0.9rem 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.note-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.note-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.note-card-date {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.note-card-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-card-preview {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1.25rem;
+  }
+
+  .app-body {
+    grid-template-columns: 1fr;
+  }
+
+  .main-subheading {
+    display: none;
+  }
+
+  .note-take {
+    padding: 1.5rem;
+  }
+
+  .note-view {
+    max-height: 480px;
+  }
+}
